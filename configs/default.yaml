@@ -1,0 +1,6 @@
+model: meta-llama/Llama-2-7b-chat-hf
+layers: [8, 12, 16, 20, 24]
+datasets: []        
+train_size: 5000
+eval_size: 1000
+seed: 42

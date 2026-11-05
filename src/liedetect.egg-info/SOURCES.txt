@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/liedetect/__init__.py
+src/liedetect/activations.py
+src/liedetect.egg-info/PKG-INFO
+src/liedetect.egg-info/SOURCES.txt
+src/liedetect.egg-info/dependency_links.txt
+src/liedetect.egg-info/requires.txt
+src/liedetect.egg-info/top_level.txt

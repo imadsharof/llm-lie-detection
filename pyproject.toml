@@ -1,0 +1,20 @@
+[project]
+name = "liedetect"
+version = "0.1.0"
+description = "Benchmarking lie detection algorithms for LLMs"
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+    "transformers",
+    "accelerate",
+    "numpy",
+    "scikit-learn",
+    "pyyaml",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
