@@ -1,6 +1,41 @@
-model: meta-llama/Llama-2-7b-chat-hf
-layers: [8, 12, 16, 20, 24]
-datasets: []        
-train_size: 5000
-eval_size: 1000
+# Reproduction of G. Vasile's E3 (white-box vs black-box, forced-answer prompt)
+model_name: meta-llama/Llama-2-7b-chat-hf
+
+datasets:
+  - commonsense_qa
+  - race
+  - arc_easy
+  - arc_challenge
+  - open_book_qa
+  - got_cities
+  - got_sp_en_trans
+  - got_larger_than
+  - imdb
+  - amazon_polarity
+  - ag_news
+  - dbpedia_14
+  - rte
+  - copa
+  - boolq
+
+n_train: 5000
+n_test: 1000
+balanced: true        # Setup A: 1 true + 1 false per question
 seed: 42
+max_length: 2048      # longer prompts are left-truncated
+
+paths:
+  data_dir: data/processed
+  output_dir: outputs
+  probes_csv: assets/probes.csv
+
+whitebox:
+  batch_size: 16
+  layers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+           17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
+  methods: [lr, lr-g, dim, lda, pca, pca-g, lat, ccs]
+  cv_folds: 4
+  cv_grouped: true    # keep both answers of a question in the same fold
+
+blackbox:
+  prompt_batch_size: 48   # elicitation prompts per forward pass

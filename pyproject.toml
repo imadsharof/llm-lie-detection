@@ -1,15 +1,20 @@
 [project]
 name = "liedetect"
 version = "0.1.0"
-description = "Benchmarking lie detection algorithms for LLMs"
+description = "Benchmarking white-box and black-box lie detection for LLMs"
 requires-python = ">=3.10"
 dependencies = [
     "torch",
-    "transformers",
+    "transformers>=4.56",
     "accelerate",
+    "datasets>=2.16,<4",   # v4 dropped script-based datasets used by some loaders
+    "pandas",
+    "pyarrow",
     "numpy",
     "scikit-learn",
+    "pydantic>=2",
     "pyyaml",
+    "tqdm",
 ]
 
 [build-system]

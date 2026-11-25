@@ -1,6 +1,11 @@
 torch
-transformers
+transformers>=4.56
 accelerate
+datasets<4,>=2.16
+pandas
+pyarrow
 numpy
 scikit-learn
+pydantic>=2
 pyyaml
+tqdm
