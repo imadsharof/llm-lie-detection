@@ -10,6 +10,7 @@
 
 set -euo pipefail
 cd "$SLURM_SUBMIT_DIR"
+module load Python/3.11.3-GCCcore-12.3.0
 source .venv/bin/activate
 
 python scripts/train_eval_blackbox.py

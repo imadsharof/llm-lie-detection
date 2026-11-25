@@ -8,10 +8,10 @@
 #SBATCH --mem=48G
 #SBATCH --time=24:00:00
 #SBATCH --output=logs/extract_%A_%a.out
-##SBATCH --partition=...           # check the GPU partition name on Lyra
 
 set -euo pipefail
 cd "$SLURM_SUBMIT_DIR"
+module load Python/3.11.3-GCCcore-12.3.0
 source .venv/bin/activate
 
 export HF_HOME=$HOME/hf_cache       # where the model was downloaded beforehand
