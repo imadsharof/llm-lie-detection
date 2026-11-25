@@ -5,7 +5,8 @@ description = "Benchmarking white-box and black-box lie detection for LLMs"
 requires-python = ">=3.10"
 dependencies = [
     "torch",
-    "transformers>=4.56",
+    "transformers>=4.56,<5",
+    "huggingface_hub<1.0",     # repeng loaders use legacy dataset names (e.g. "commonsense_qa")
     "accelerate",
     "datasets>=2.16,<4",   # v4 dropped script-based datasets used by some loaders
     "pandas",
